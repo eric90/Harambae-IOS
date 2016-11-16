@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570454AA1DDD171A00396BC1 /* BldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570454A91DDD171A00396BC1 /* BldModel.swift */; };
 		570856B61DDBC6DD00668C74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570856B51DDBC6DD00668C74 /* AppDelegate.swift */; };
 		570856B81DDBC6DD00668C74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570856B71DDBC6DD00668C74 /* ViewController.swift */; };
 		570856BB1DDBC6DD00668C74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 570856B91DDBC6DD00668C74 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		570454A91DDD171A00396BC1 /* BldModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BldModel.swift; sourceTree = "<group>"; };
 		570856B21DDBC6DD00668C74 /* bld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		570856B51DDBC6DD00668C74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		570856B71DDBC6DD00668C74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		570454A81DDD16E300396BC1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				570454A91DDD171A00396BC1 /* BldModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		570856A91DDBC6DC00668C74 = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +66,7 @@
 		570856B41DDBC6DD00668C74 /* bld */ = {
 			isa = PBXGroup;
 			children = (
+				570454A81DDD16E300396BC1 /* Model */,
 				570856B51DDBC6DD00668C74 /* AppDelegate.swift */,
 				570856B71DDBC6DD00668C74 /* ViewController.swift */,
 				570856B91DDBC6DD00668C74 /* Main.storyboard */,
@@ -139,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				570454AA1DDD171A00396BC1 /* BldModel.swift in Sources */,
 				570856BE1DDBC6DD00668C74 /* bld.xcdatamodeld in Sources */,
 				570856B81DDBC6DD00668C74 /* ViewController.swift in Sources */,
 				570856B61DDBC6DD00668C74 /* AppDelegate.swift in Sources */,
@@ -303,6 +315,7 @@
 				570856C91DDBC6DD00668C74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
