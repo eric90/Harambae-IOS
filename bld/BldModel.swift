@@ -79,6 +79,10 @@ class Recipe {
     }
 }
 
+class CookBook {
+    var recipes: [Recipe]?
+}
+
 class Pantry {
     var ingredients: [Ingredient]?
     
