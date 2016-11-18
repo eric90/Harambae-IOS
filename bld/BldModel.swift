@@ -49,10 +49,17 @@ enum Restriction {
 ////////////////////////////////////////////////////////////////////
 
 class Ingredient {
-    let name: String?
+    let name: String
     let type: FoodType
     var amount: Float
     let unit: Unit
+    
+    init(name: String, type: FoodType, amount: Float, unit: Unit) {
+        self.name = name
+        self.type = type
+        self.amount = amount
+        self.unit = unit
+    }
     
     func createJSON() -> String {
         return "Hey! This is a function to make!"
@@ -63,8 +70,13 @@ class Ingredient {
 ///////////////////////////////////////////
 
 class Recipe {
-    let name: String?
+    let name: String
     let ingredients: [Ingredient]
+    
+    init(name: String, ingredients: [Ingredient]) {
+        self.name = name
+        self.ingredients = ingredients
+    }
 }
 
 class Pantry {
@@ -88,10 +100,17 @@ class Day {
     var breakfast: Recipe?
     var lunch: Recipe?
     var dinner: Recipe?
+    
+    init(date: NSDate, breakfast: Recipe?, lunch: Recipe?, dinner: Recipe?) {
+        self.date = date
+        self.breakfast = breakfast
+        self.lunch = lunch
+        self.dinner = dinner
+    }
 }
 
 class Calendar {
-    var days: [Day]
+    var days: [Day]?
 }
 
 ///////////////////////////////////////////
@@ -102,11 +121,23 @@ class DayRequest {
     let breakfast: Bool
     let lunch: Bool
     let dinner: Bool
+    
+    init(date: NSDate, breakfast: Bool, lunch: Bool, dinner: Bool) {
+        self.date = date
+        self.breakfast = breakfast
+        self.lunch = lunch
+        self.dinner = dinner
+    }
 }
 
 class MealRequest {
     var request: [DayRequest]
     var budget: Float
+    
+    init(request: [DayRequest], budget: Float) {
+        self.request = request
+        self.budget = budget
+    }
     
     func createJSON() -> String {
         return "You lovve making methods <3<3<3"
@@ -118,13 +149,12 @@ class MealRequest {
 ////////////////////////////////////////////////////////////////////
 
 class BLD {
-    var caldendar: Calendar
-    var pantry: Pantry
-    var diet: Diet
+    var caldendar: Calendar?
+    var pantry: Pantry?
+    var diet: Diet?
     var request: MealRequest?
     
     func updateCalendar() {
-        return "up date colander okay?"
     }
 }
 
