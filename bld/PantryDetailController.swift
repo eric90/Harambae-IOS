@@ -22,6 +22,8 @@ class PantryDetailController: UITableViewController {
         self.title = "\(foodType!)"
         tableView.reloadData()
         super.viewDidLoad()
+        let mainController = self.tabBarController  as! MainTabBarViewController
+        pantry = mainController.mainData.pantry
     }
 
     override func didReceiveMemoryWarning() {
@@ -59,20 +61,6 @@ class PantryDetailController: UITableViewController {
     ////////////////// SEGUE METHODS ///////////////////////////////
     ////////////////////////////////////////////////////////////////
     
-    ///////////////////////////
-    ///// FROM PANTRY /////////
-    ///////////////////////////
-    
-    @IBAction func displayFoodType(segue:UIStoryboardSegue) {
-        if let pantryController = segue.source as? PantryController {
-            if let newFoodType = pantryController.selectedFoodType {
-                foodType = newFoodType
-                self.title = "\(foodType)"
-                tableView.reloadData()
-            }
-        }
-        
-    }
     
     ///////////////////////////
     ///// FROM ADD ITEM ///////

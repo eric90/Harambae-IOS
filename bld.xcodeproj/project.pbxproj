@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1B275B0B1DEC086500E17C84 /* FoodTypePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B275B0A1DEC086500E17C84 /* FoodTypePickerController.swift */; };
+		1B275B0D1DEC0A2D00E17C84 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B275B0C1DEC0A2D00E17C84 /* MainTabBarViewController.swift */; };
 		1B3407381DE688320002CC80 /* PantryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3407371DE688320002CC80 /* PantryController.swift */; };
 		1B50578B1DE8D445000F43A7 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50578A1DE8D445000F43A7 /* AddItemViewController.swift */; };
 		1BCEDCF51DEA2F79005F3AFF /* PantryDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEDCF41DEA2F79005F3AFF /* PantryDetailController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		1B275B0A1DEC086500E17C84 /* FoodTypePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodTypePickerController.swift; sourceTree = "<group>"; };
+		1B275B0C1DEC0A2D00E17C84 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		1B3407371DE688320002CC80 /* PantryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantryController.swift; sourceTree = "<group>"; };
 		1B50578A1DE8D445000F43A7 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		1BCEDCF41DEA2F79005F3AFF /* PantryDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantryDetailController.swift; sourceTree = "<group>"; };
@@ -86,10 +88,11 @@
 			isa = PBXGroup;
 			children = (
 				570454A81DDD16E300396BC1 /* Model */,
-				570856B51DDBC6DD00668C74 /* AppDelegate.swift */,
+				1B3407391DE688460002CC80 /* Pantry */,
+				1B275B0C1DEC0A2D00E17C84 /* MainTabBarViewController.swift */,
 				570856B71DDBC6DD00668C74 /* ViewController.swift */,
 				570856B91DDBC6DD00668C74 /* Main.storyboard */,
-				1B3407391DE688460002CC80 /* Pantry */,
+				570856B51DDBC6DD00668C74 /* AppDelegate.swift */,
 				570856BF1DDBC6DD00668C74 /* Assets.xcassets */,
 				570856C11DDBC6DD00668C74 /* LaunchScreen.storyboard */,
 				570856C41DDBC6DD00668C74 /* Info.plist */,
@@ -173,6 +176,7 @@
 				1B3407381DE688320002CC80 /* PantryController.swift in Sources */,
 				570454AA1DDD171A00396BC1 /* BldModel.swift in Sources */,
 				570856BE1DDBC6DD00668C74 /* bld.xcdatamodeld in Sources */,
+				1B275B0D1DEC0A2D00E17C84 /* MainTabBarViewController.swift in Sources */,
 				1BCEDCF51DEA2F79005F3AFF /* PantryDetailController.swift in Sources */,
 				570856B81DDBC6DD00668C74 /* ViewController.swift in Sources */,
 				1B275B0B1DEC086500E17C84 /* FoodTypePickerController.swift in Sources */,

@@ -98,8 +98,13 @@ class Pantry {
 }
 
 class Diet {
-    var prohibitedItems: [Ingredient]?
-    var dietaryRestriction: [Restriction]?
+    var prohibitedItems: [Ingredient]
+    var dietaryRestriction: [Restriction]
+    
+    init() {
+        prohibitedItems = []
+        dietaryRestriction = []
+    }
 }
 
 ///////////////////////////////////////////
@@ -120,7 +125,11 @@ class Day {
 }
 
 class Calendar {
-    var days: [Day]?
+    var days: [Day]
+    
+    init() {
+        days = []
+    }
 }
 
 ///////////////////////////////////////////
@@ -159,10 +168,16 @@ class MealRequest {
 ////////////////////////////////////////////////////////////////////
 
 class BLD {
-    var caldendar: Calendar?
-    var pantry: Pantry?
-    var diet: Diet?
+    var calendar: Calendar
+    var pantry: Pantry
+    var diet: Diet
     var request: MealRequest?
+    
+    init() {
+        calendar = Calendar()
+        pantry = Pantry()
+        diet = Diet()
+    }
     
     func updateCalendar() {
     }

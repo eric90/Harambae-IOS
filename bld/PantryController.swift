@@ -10,8 +10,6 @@ import UIKit
 
 class PantryController: UITableViewController {
     
-    var pantry = Pantry()
-    
     var selectedFoodType: FoodType?
     
     /////////////////////////////////////
@@ -75,7 +73,6 @@ class PantryController: UITableViewController {
             let viewController = segue.destination as! PantryDetailController
             // your new view controller should have property that will store passed value
             viewController.foodType = selectedFoodType
-            viewController.pantry = pantry
         }
         
     }
@@ -85,9 +82,5 @@ class PantryController: UITableViewController {
     ///// FROM DETAIL //////
     ////////////////////////
     @IBAction func backToPantry(segue:UIStoryboardSegue) {
-        if let pantryDetail = segue.source as? PantryDetailController {
-            self.pantry = pantryDetail.pantry
-        }
     }
-    
 }
