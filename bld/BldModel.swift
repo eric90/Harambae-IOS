@@ -12,25 +12,23 @@ import Foundation
 //////////////////// UNITS AND FOOD TYPES ////////////////////////
 //////////////////////////////////////////////////////////////////
 
-enum FoodType {
-    case dairy
-    case produce
-    case meat
-    case grains
-    case canned_goods
-    case dried_goods
-    case beverages
-    case snack_food
+enum FoodType: String {
+    case Dairy, Produce, Meat, Grains, Canned, Beverages, Snacks
+    
+    static var allTypes = ["Dairy","Produce","Meat","Grains","Canned","Beverages","Snacks"]
 }
 
-enum Unit {
-    case oz
-    case lb
-    case cup
-    case tbsp
-    case tsp
-    case liter
+///////////////////////////////////////////
+///////////////////////////////////////////
+
+enum Unit: String {
+    case oz, lb, cup, tbsp, tsp
+    
+    static var allUnits = ["oz","lb","cup","tbsp","tsp"]
 }
+
+///////////////////////////////////////////
+///////////////////////////////////////////
 
 enum Restriction {
     case gluten_free
@@ -84,7 +82,15 @@ class CookBook {
 }
 
 class Pantry {
-    var ingredients: [Ingredient]?
+    var ingredients: [FoodType: [Ingredient]]
+    
+    init() {
+        ingredients = [FoodType: [Ingredient]]()
+        for foodType in FoodType.allTypes {
+            let type = FoodType(rawValue: foodType)
+            ingredients[type!] = []
+        }
+    }
     
     func createJSON() -> String {
         return "Another function 4 u"
