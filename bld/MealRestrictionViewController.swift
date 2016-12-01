@@ -14,8 +14,12 @@ class MealRestrictionViewController: UIViewController, UITableViewDataSource, UI
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBAction func SubmitRestrictions(_ sender: Any) {
+        createDiet()
+        performSegue(withIdentifier: "SaveInitialDiet", sender: self)
+    }
     var names = ["Vegetarian", "Vegan", "Can Eat Anything"]
-    var checkImg = [UIImage(named: "checked"), UIImage(named: "checked"), UIImage(named: "checked")]
+    var checkImg = [UIImage(named: "unchecked"), UIImage(named: "unchecked"), UIImage(named: "unchecked")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,23 +32,31 @@ class MealRestrictionViewController: UIViewController, UITableViewDataSource, UI
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomCell
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell
         
-        cell.ImgCheck.image = checkImg[indexPath.row]
-        cell.LblMeal.text = Restriction.allRestrictions[indexPath.row]
+        cell.textLabel!.text = Restriction.allRestrictions[indexPath.row]
         
         return cell
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //////////////////////////////////////
+    //////////////////////////////////////
+    
+    func createDiet() {
+        
     }
-    */
-
+    
+    //////////////////////////////////////
+    //////////////////////////////////////
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "SaveInitialDiet") {
+            
+            // initialize new view controller and cast it as your view controller
+            let viewController = segue.destination as! MainTabBarViewController
+            // your new view controller should have property that will store passed value
+            viewController.mainData.diet = diet
+        }
+        
+    }
 }
