@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bld" translatesAutoresizingMaskIntoConstraints="NO" id="P5E-X2-v1n">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bLd02" translatesAutoresizingMaskIntoConstraints="NO" id="P5E-X2-v1n">
                                 <rect key="frame" x="67" y="117" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="URU-EF-WlO"/>
@@ -30,7 +30,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="P5E-X2-v1n" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="97" id="5bJ-uv-XaJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="P5E-X2-v1n" secondAttribute="trailing" constant="52" id="hIk-MX-4a6"/>
@@ -44,6 +44,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bld" width="199" height="124"/>
+        <image name="bLd02" width="96" height="67"/>
     </resources>
 </document>

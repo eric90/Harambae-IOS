@@ -40,6 +40,8 @@ enum Restriction {
     case lactose_intolerant
     case soy_allergy
     case egg_allergy
+    
+    static var allRestrictions = ["vegetarian","vegan","paleo"]
 }
 
 ////////////////////////////////////////////////////////////////////
