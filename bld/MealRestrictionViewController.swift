@@ -11,6 +11,21 @@ import UIKit
 class MealRestrictionViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var diet = Diet()
+    
+    //var selectedRows = [Restriction]()
+    
+    var selectedRestrictionIndex:Int?
+    
+    var selectedRestriction:String? {
+        didSet {
+            if let restriction = selectedRestriction {
+                selectedRestrictionIndex = Restriction.allRestrictions.index(of: restriction)
+            }
+        }
+    }
+    
+    //////////////////////////////////////////////
+    //////////////////////////////////////////////
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -18,32 +33,55 @@ class MealRestrictionViewController: UIViewController, UITableViewDataSource, UI
         createDiet()
         performSegue(withIdentifier: "SaveInitialDiet", sender: self)
     }
-    var names = ["Vegetarian", "Vegan", "Can Eat Anything"]
-    var checkImg = [UIImage(named: "unchecked"), UIImage(named: "unchecked"), UIImage(named: "unchecked")]
+    
+    //////////////////////////////////////////////
+    //////////////////////////////////////////////
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
+    
+    //////////////////////////////////////////////
+    //////////////////////////////////////////////
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Restriction.allRestrictions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell
-        
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel!.text = Restriction.allRestrictions[indexPath.row]
         
+        if indexPath.row == selectedRestrictionIndex {
+            cell.accessoryType = .checkmark
+        } else {
+            cell.accessoryType = .none
+        }
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        //Other row is selected - need to deselect it
+        if let index = selectedRestrictionIndex {
+            let cell = tableView.cellForRow(at: NSIndexPath(item: index, section: 0) as IndexPath) as UITableViewCell!
+            cell?.accessoryType = .none
+        }
+        
+        selectedRestriction = Restriction.allRestrictions[indexPath.row]
+        
+        //update the checkmark for the current row
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.accessoryType = .checkmark
     }
     
     //////////////////////////////////////
     //////////////////////////////////////
     
     func createDiet() {
-        
+        diet.dietaryRestriction.append(
     }
     
     //////////////////////////////////////

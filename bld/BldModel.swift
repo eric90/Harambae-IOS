@@ -23,25 +23,15 @@ enum FoodType: String {
 
 enum Unit: String {
     case oz, lb, cup, tbsp, tsp
-    
     static var allUnits = ["oz","lb","cup","tbsp","tsp"]
 }
 
 ///////////////////////////////////////////
 ///////////////////////////////////////////
 
-enum Restriction {
-    case gluten_free
-    case vegetarian
-    case vegan
-    case pescitarian
-    case paleo
-    case nut_allergy
-    case lactose_intolerant
-    case soy_allergy
-    case egg_allergy
-    
-    static var allRestrictions = ["vegetarian","vegan","paleo"]
+enum Restriction: String {
+    case vegetarian, vegan, pescitarian, paleo
+    static var allRestrictions = ["vegetarian","vegan","pescitarian","paleo"]
 }
 
 ////////////////////////////////////////////////////////////////////

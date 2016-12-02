@@ -20,7 +20,6 @@
 		570856C01DDBC6DD00668C74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 570856BF1DDBC6DD00668C74 /* Assets.xcassets */; };
 		570856C31DDBC6DD00668C74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 570856C11DDBC6DD00668C74 /* LaunchScreen.storyboard */; };
 		57A81C821DEFE1F800ADD036 /* MealRestrictionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A81C811DEFE1F800ADD036 /* MealRestrictionViewController.swift */; };
-		57A81C841DEFE38E00ADD036 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A81C831DEFE38E00ADD036 /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +38,6 @@
 		570856C21DDBC6DD00668C74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		570856C41DDBC6DD00668C74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57A81C811DEFE1F800ADD036 /* MealRestrictionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealRestrictionViewController.swift; sourceTree = "<group>"; };
-		57A81C831DEFE38E00ADD036 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +60,15 @@
 				1B275B0A1DEC086500E17C84 /* FoodTypePickerController.swift */,
 			);
 			name = Pantry;
+			sourceTree = "<group>";
+		};
+		1B78C82F1DF0EE0400178832 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				570856B71DDBC6DD00668C74 /* ViewController.swift */,
+				57A81C811DEFE1F800ADD036 /* MealRestrictionViewController.swift */,
+			);
+			name = Setup;
 			sourceTree = "<group>";
 		};
 		570454A81DDD16E300396BC1 /* Model */ = {
@@ -92,17 +99,15 @@
 			isa = PBXGroup;
 			children = (
 				570454A81DDD16E300396BC1 /* Model */,
+				1B78C82F1DF0EE0400178832 /* Setup */,
 				1B3407391DE688460002CC80 /* Pantry */,
 				1B275B0C1DEC0A2D00E17C84 /* MainTabBarViewController.swift */,
-				570856B71DDBC6DD00668C74 /* ViewController.swift */,
 				570856B91DDBC6DD00668C74 /* Main.storyboard */,
-				570856B51DDBC6DD00668C74 /* AppDelegate.swift */,
-				570856BF1DDBC6DD00668C74 /* Assets.xcassets */,
 				570856C11DDBC6DD00668C74 /* LaunchScreen.storyboard */,
 				570856C41DDBC6DD00668C74 /* Info.plist */,
 				570856BC1DDBC6DD00668C74 /* bld.xcdatamodeld */,
-				57A81C811DEFE1F800ADD036 /* MealRestrictionViewController.swift */,
-				57A81C831DEFE38E00ADD036 /* CustomCell.swift */,
+				570856B51DDBC6DD00668C74 /* AppDelegate.swift */,
+				570856BF1DDBC6DD00668C74 /* Assets.xcassets */,
 			);
 			path = bld;
 			sourceTree = "<group>";
@@ -181,7 +186,6 @@
 			files = (
 				1B3407381DE688320002CC80 /* PantryController.swift in Sources */,
 				570454AA1DDD171A00396BC1 /* BldModel.swift in Sources */,
-				57A81C841DEFE38E00ADD036 /* CustomCell.swift in Sources */,
 				570856BE1DDBC6DD00668C74 /* bld.xcdatamodeld in Sources */,
 				1B275B0D1DEC0A2D00E17C84 /* MainTabBarViewController.swift in Sources */,
 				1BCEDCF51DEA2F79005F3AFF /* PantryDetailController.swift in Sources */,
