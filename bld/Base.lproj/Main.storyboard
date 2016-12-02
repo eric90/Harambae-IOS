@@ -190,6 +190,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="restrictedItems" destination="jwn-AP-rLz" id="nll-38-qu0"/>
                         <outlet property="tableView" destination="0sp-lv-NTS" id="kFi-58-TeI"/>
                     </connections>
                 </viewController>

@@ -29,6 +29,8 @@ class MealRestrictionViewController: UIViewController, UITableViewDataSource, UI
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var restrictedItems: UITextField!
+    
     @IBAction func SubmitRestrictions(_ sender: Any) {
         createDiet()
         performSegue(withIdentifier: "SaveInitialDiet", sender: self)
@@ -81,7 +83,9 @@ class MealRestrictionViewController: UIViewController, UITableViewDataSource, UI
     //////////////////////////////////////
     
     func createDiet() {
-        diet.dietaryRestriction.append(
+        let newRestriction = Restriction(rawValue: selectedRestriction)
+        diet.dietaryRestriction.append(newRestriction)
+        
     }
     
     //////////////////////////////////////
