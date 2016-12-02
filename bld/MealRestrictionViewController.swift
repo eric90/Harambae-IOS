@@ -83,8 +83,8 @@ class MealRestrictionViewController: UIViewController, UITableViewDataSource, UI
     //////////////////////////////////////
     
     func createDiet() {
-        let newRestriction = Restriction(rawValue: selectedRestriction)
-        diet.dietaryRestriction.append(newRestriction)
+        let newRestriction = Restriction(rawValue: selectedRestriction!)
+        diet.dietaryRestriction.append(newRestriction!)
         
     }
     
