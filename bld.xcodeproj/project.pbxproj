@@ -11,6 +11,9 @@
 		1B275B0D1DEC0A2D00E17C84 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B275B0C1DEC0A2D00E17C84 /* MainTabBarViewController.swift */; };
 		1B3407381DE688320002CC80 /* PantryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3407371DE688320002CC80 /* PantryController.swift */; };
 		1B50578B1DE8D445000F43A7 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50578A1DE8D445000F43A7 /* AddItemViewController.swift */; };
+		1B7ECD4A1DF223630045E3E8 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7ECD491DF223630045E3E8 /* CalendarViewController.swift */; };
+		1B7ECD4C1DF22D0C0045E3E8 /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7ECD4B1DF22D0C0045E3E8 /* MealViewController.swift */; };
+		1B7ECD4E1DF2715C0045E3E8 /* MealPlannerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7ECD4D1DF2715C0045E3E8 /* MealPlannerCollectionViewController.swift */; };
 		1BCEDCF51DEA2F79005F3AFF /* PantryDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEDCF41DEA2F79005F3AFF /* PantryDetailController.swift */; };
 		570454AA1DDD171A00396BC1 /* BldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570454A91DDD171A00396BC1 /* BldModel.swift */; };
 		570856B61DDBC6DD00668C74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570856B51DDBC6DD00668C74 /* AppDelegate.swift */; };
@@ -27,6 +30,9 @@
 		1B275B0C1DEC0A2D00E17C84 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		1B3407371DE688320002CC80 /* PantryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantryController.swift; sourceTree = "<group>"; };
 		1B50578A1DE8D445000F43A7 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		1B7ECD491DF223630045E3E8 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		1B7ECD4B1DF22D0C0045E3E8 /* MealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
+		1B7ECD4D1DF2715C0045E3E8 /* MealPlannerCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealPlannerCollectionViewController.swift; path = bld/MealPlannerCollectionViewController.swift; sourceTree = "<group>"; };
 		1BCEDCF41DEA2F79005F3AFF /* PantryDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantryDetailController.swift; sourceTree = "<group>"; };
 		570454A91DDD171A00396BC1 /* BldModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BldModel.swift; sourceTree = "<group>"; };
 		570856B21DDBC6DD00668C74 /* bld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bld.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +77,17 @@
 			name = Setup;
 			sourceTree = "<group>";
 		};
+		1B78C8321DF12EFD00178832 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				1B7ECD491DF223630045E3E8 /* CalendarViewController.swift */,
+				1B7ECD4B1DF22D0C0045E3E8 /* MealViewController.swift */,
+				1B7ECD4D1DF2715C0045E3E8 /* MealPlannerCollectionViewController.swift */,
+			);
+			name = Calendar;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		570454A81DDD16E300396BC1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +118,7 @@
 				570454A81DDD16E300396BC1 /* Model */,
 				1B78C82F1DF0EE0400178832 /* Setup */,
 				1B3407391DE688460002CC80 /* Pantry */,
+				1B78C8321DF12EFD00178832 /* Calendar */,
 				1B275B0C1DEC0A2D00E17C84 /* MainTabBarViewController.swift */,
 				570856B91DDBC6DD00668C74 /* Main.storyboard */,
 				570856C11DDBC6DD00668C74 /* LaunchScreen.storyboard */,
@@ -187,8 +205,11 @@
 				1B3407381DE688320002CC80 /* PantryController.swift in Sources */,
 				570454AA1DDD171A00396BC1 /* BldModel.swift in Sources */,
 				570856BE1DDBC6DD00668C74 /* bld.xcdatamodeld in Sources */,
+				1B7ECD4A1DF223630045E3E8 /* CalendarViewController.swift in Sources */,
 				1B275B0D1DEC0A2D00E17C84 /* MainTabBarViewController.swift in Sources */,
+				1B7ECD4C1DF22D0C0045E3E8 /* MealViewController.swift in Sources */,
 				1BCEDCF51DEA2F79005F3AFF /* PantryDetailController.swift in Sources */,
+				1B7ECD4E1DF2715C0045E3E8 /* MealPlannerCollectionViewController.swift in Sources */,
 				570856B81DDBC6DD00668C74 /* ViewController.swift in Sources */,
 				57A81C821DEFE1F800ADD036 /* MealRestrictionViewController.swift in Sources */,
 				1B275B0B1DEC086500E17C84 /* FoodTypePickerController.swift in Sources */,
