@@ -12,6 +12,7 @@
 		1B3407381DE688320002CC80 /* PantryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B3407371DE688320002CC80 /* PantryController.swift */; };
 		1B50578B1DE8D445000F43A7 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50578A1DE8D445000F43A7 /* AddItemViewController.swift */; };
 		1BCEDCF51DEA2F79005F3AFF /* PantryDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEDCF41DEA2F79005F3AFF /* PantryDetailController.swift */; };
+		529E5F691DF35DE600398AA7 /* APIInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529E5F681DF35DE600398AA7 /* APIInterface.swift */; };
 		570454AA1DDD171A00396BC1 /* BldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570454A91DDD171A00396BC1 /* BldModel.swift */; };
 		570856B61DDBC6DD00668C74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570856B51DDBC6DD00668C74 /* AppDelegate.swift */; };
 		570856B81DDBC6DD00668C74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570856B71DDBC6DD00668C74 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 		1B3407371DE688320002CC80 /* PantryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantryController.swift; sourceTree = "<group>"; };
 		1B50578A1DE8D445000F43A7 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		1BCEDCF41DEA2F79005F3AFF /* PantryDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantryDetailController.swift; sourceTree = "<group>"; };
+		529E5F681DF35DE600398AA7 /* APIInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIInterface.swift; sourceTree = "<group>"; };
 		570454A91DDD171A00396BC1 /* BldModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BldModel.swift; sourceTree = "<group>"; };
 		570856B21DDBC6DD00668C74 /* bld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		570856B51DDBC6DD00668C74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				570454A91DDD171A00396BC1 /* BldModel.swift */,
+				529E5F681DF35DE600398AA7 /* APIInterface.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -193,6 +196,7 @@
 				57A81C821DEFE1F800ADD036 /* MealRestrictionViewController.swift in Sources */,
 				1B275B0B1DEC086500E17C84 /* FoodTypePickerController.swift in Sources */,
 				570856B61DDBC6DD00668C74 /* AppDelegate.swift in Sources */,
+				529E5F691DF35DE600398AA7 /* APIInterface.swift in Sources */,
 				1B50578B1DE8D445000F43A7 /* AddItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
