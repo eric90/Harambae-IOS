@@ -32,7 +32,8 @@ class MealRestrictionViewController: UIViewController, UITableViewDataSource, UI
     @IBOutlet weak var restrictedItems: UITextField!
     
     @IBAction func SubmitRestrictions(_ sender: Any) {
-        createDiet()
+        let newRestriction = Restriction(rawValue: selectedRestriction!)
+        diet.dietaryRestriction.append(newRestriction!)
         performSegue(withIdentifier: "SaveInitialDiet", sender: self)
     }
     
@@ -77,15 +78,6 @@ class MealRestrictionViewController: UIViewController, UITableViewDataSource, UI
         //update the checkmark for the current row
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .checkmark
-    }
-    
-    //////////////////////////////////////
-    //////////////////////////////////////
-    
-    func createDiet() {
-        let newRestriction = Restriction(rawValue: selectedRestriction!)
-        diet.dietaryRestriction.append(newRestriction!)
-        
     }
     
     //////////////////////////////////////

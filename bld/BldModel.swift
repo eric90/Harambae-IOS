@@ -14,7 +14,6 @@ import Foundation
 
 enum FoodType: String {
     case Dairy, Produce, Meat, Grains, Canned, Beverages, Snacks
-    
     static var allTypes = ["Dairy","Produce","Meat","Grains","Canned","Beverages","Snacks"]
 }
 
@@ -103,37 +102,70 @@ class Diet {
 ///////////////////////////////////////////
 
 class Day {
-    let date: NSDate
-    var breakfast: Recipe?
-    var lunch: Recipe?
-    var dinner: Recipe?
+    let date: String
+    var breakfast: Recipe
+    var lunch: Recipe
+    var dinner: Recipe
     
-    init(date: NSDate, breakfast: Recipe?, lunch: Recipe?, dinner: Recipe?) {
+    init(date: String) {
         self.date = date
-        self.breakfast = breakfast
-        self.lunch = lunch
-        self.dinner = dinner
+        self.breakfast = none
+        self.lunch = none
+        self.dinner = none
     }
+
+    let none = Recipe(name: "None", ingredients: [])
 }
 
 class Calendar {
-    var days: [Day]
+    var days: [String: Day]
+    var displayDate: String
+    
+    let weekDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+    
+    /////////////////////
+    /////////////////////
     
     init() {
-        days = []
+        let currentDate = "Friday"
+        days = [currentDate: Day(date: currentDate)]
+        displayDate = currentDate
     }
+    
+    /////////////////////
+    /////////////////////
+    
+    func loadDay(dayName: String) -> Day {
+        if let day = days[dayName] {
+            return day
+        } else {
+            days[dayName] = Day(date: dayName)
+            return days[dayName]!
+        }
+    }
+    
+    func incrementDisplayDate() {
+        let addDateIndex = ((weekDays.index(of: displayDate))! + 1) % 7
+        displayDate = weekDays[addDateIndex]
+    }
+    
+    func decrementDisplayDate() {
+        let subtractDateIndex = ((weekDays.index(of: displayDate))! - 1) % 7
+        displayDate = weekDays[subtractDateIndex]
+    }
+    
 }
 
 ///////////////////////////////////////////
 ///////////////////////////////////////////
 
 class DayRequest {
-    let date: NSDate
+    let date: String
     let breakfast: Bool
     let lunch: Bool
     let dinner: Bool
     
-    init(date: NSDate, breakfast: Bool, lunch: Bool, dinner: Bool) {
+    init(date: String, breakfast: Bool, lunch: Bool, dinner: Bool) {
         self.date = date
         self.breakfast = breakfast
         self.lunch = lunch
