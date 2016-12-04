@@ -13,7 +13,7 @@
 		1B50578B1DE8D445000F43A7 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B50578A1DE8D445000F43A7 /* AddItemViewController.swift */; };
 		1B7ECD4A1DF223630045E3E8 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7ECD491DF223630045E3E8 /* CalendarViewController.swift */; };
 		1B7ECD4C1DF22D0C0045E3E8 /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7ECD4B1DF22D0C0045E3E8 /* MealViewController.swift */; };
-		1B7ECD4E1DF2715C0045E3E8 /* MealPlannerCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7ECD4D1DF2715C0045E3E8 /* MealPlannerCollectionViewController.swift */; };
+		1B89C0C21DF3679300252120 /* MealPlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B89C0C11DF3679300252120 /* MealPlannerViewController.swift */; };
 		1BCEDCF51DEA2F79005F3AFF /* PantryDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEDCF41DEA2F79005F3AFF /* PantryDetailController.swift */; };
 		570454AA1DDD171A00396BC1 /* BldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570454A91DDD171A00396BC1 /* BldModel.swift */; };
 		570856B61DDBC6DD00668C74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570856B51DDBC6DD00668C74 /* AppDelegate.swift */; };
@@ -32,7 +32,7 @@
 		1B50578A1DE8D445000F43A7 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		1B7ECD491DF223630045E3E8 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		1B7ECD4B1DF22D0C0045E3E8 /* MealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
-		1B7ECD4D1DF2715C0045E3E8 /* MealPlannerCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealPlannerCollectionViewController.swift; path = bld/MealPlannerCollectionViewController.swift; sourceTree = "<group>"; };
+		1B89C0C11DF3679300252120 /* MealPlannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealPlannerViewController.swift; sourceTree = "<group>"; };
 		1BCEDCF41DEA2F79005F3AFF /* PantryDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantryDetailController.swift; sourceTree = "<group>"; };
 		570454A91DDD171A00396BC1 /* BldModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BldModel.swift; sourceTree = "<group>"; };
 		570856B21DDBC6DD00668C74 /* bld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bld.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,7 +82,7 @@
 			children = (
 				1B7ECD491DF223630045E3E8 /* CalendarViewController.swift */,
 				1B7ECD4B1DF22D0C0045E3E8 /* MealViewController.swift */,
-				1B7ECD4D1DF2715C0045E3E8 /* MealPlannerCollectionViewController.swift */,
+				1B89C0C11DF3679300252120 /* MealPlannerViewController.swift */,
 			);
 			name = Calendar;
 			path = ..;
@@ -209,8 +209,8 @@
 				1B275B0D1DEC0A2D00E17C84 /* MainTabBarViewController.swift in Sources */,
 				1B7ECD4C1DF22D0C0045E3E8 /* MealViewController.swift in Sources */,
 				1BCEDCF51DEA2F79005F3AFF /* PantryDetailController.swift in Sources */,
-				1B7ECD4E1DF2715C0045E3E8 /* MealPlannerCollectionViewController.swift in Sources */,
 				570856B81DDBC6DD00668C74 /* ViewController.swift in Sources */,
+				1B89C0C21DF3679300252120 /* MealPlannerViewController.swift in Sources */,
 				57A81C821DEFE1F800ADD036 /* MealRestrictionViewController.swift in Sources */,
 				1B275B0B1DEC086500E17C84 /* FoodTypePickerController.swift in Sources */,
 				570856B61DDBC6DD00668C74 /* AppDelegate.swift in Sources */,

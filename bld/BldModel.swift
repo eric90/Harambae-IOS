@@ -161,9 +161,9 @@ class Calendar {
 
 class DayRequest {
     let date: String
-    let breakfast: Bool
-    let lunch: Bool
-    let dinner: Bool
+    var breakfast: Bool
+    var lunch: Bool
+    var dinner: Bool
     
     init(date: String, breakfast: Bool, lunch: Bool, dinner: Bool) {
         self.date = date

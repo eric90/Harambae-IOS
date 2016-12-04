@@ -95,6 +95,7 @@ class CalendarViewController: UIViewController {
     ///////////////// SEGUE METHODS /////////////////
     /////////////////////////////////////////////////
     
+    //SEGUE FOR DISPLAYING MEALS
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showMeal") {
             
@@ -103,8 +104,21 @@ class CalendarViewController: UIViewController {
             // your new view controller should have property that will store passed value
             viewController.recipe = selectedMeal
         }
-        
     }
+    
+    //SEGUE THAT RECEIVES MEAL REQUEST
+    @IBAction func processMealRequest(segue:UIStoryboardSegue) {
+        if let mealPlannerViewController = segue.source as? MealPlannerViewController {
+            let mealRequest = mealPlannerViewController.mealRequest
+            print("\(mealRequest)")
+        }
+    }
+    
+    //CANCEL MEAL REQUESTION
+    @IBAction func cancelMealRequest(segue:UIStoryboardSegue) {
+    }
+    
+    
     
 
 }
