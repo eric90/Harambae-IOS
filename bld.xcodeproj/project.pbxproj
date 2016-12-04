@@ -15,6 +15,8 @@
 		1B7ECD4C1DF22D0C0045E3E8 /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7ECD4B1DF22D0C0045E3E8 /* MealViewController.swift */; };
 		1B89C0C21DF3679300252120 /* MealPlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B89C0C11DF3679300252120 /* MealPlannerViewController.swift */; };
 		1BCEDCF51DEA2F79005F3AFF /* PantryDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEDCF41DEA2F79005F3AFF /* PantryDetailController.swift */; };
+		527594791DF369C900FCA655 /* bldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527594781DF369C900FCA655 /* bldTests.swift */; };
+		529E5F691DF35DE600398AA7 /* APIInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529E5F681DF35DE600398AA7 /* APIInterface.swift */; };
 		570454AA1DDD171A00396BC1 /* BldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570454A91DDD171A00396BC1 /* BldModel.swift */; };
 		570856B61DDBC6DD00668C74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570856B51DDBC6DD00668C74 /* AppDelegate.swift */; };
 		570856B81DDBC6DD00668C74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570856B71DDBC6DD00668C74 /* ViewController.swift */; };
@@ -25,6 +27,16 @@
 		57A81C821DEFE1F800ADD036 /* MealRestrictionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A81C811DEFE1F800ADD036 /* MealRestrictionViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5275947B1DF369C900FCA655 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 570856AA1DDBC6DC00668C74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 570856B11DDBC6DC00668C74;
+			remoteInfo = bld;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1B275B0A1DEC086500E17C84 /* FoodTypePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodTypePickerController.swift; sourceTree = "<group>"; };
 		1B275B0C1DEC0A2D00E17C84 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
@@ -34,6 +46,10 @@
 		1B7ECD4B1DF22D0C0045E3E8 /* MealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
 		1B89C0C11DF3679300252120 /* MealPlannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealPlannerViewController.swift; sourceTree = "<group>"; };
 		1BCEDCF41DEA2F79005F3AFF /* PantryDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantryDetailController.swift; sourceTree = "<group>"; };
+		527594761DF369C900FCA655 /* bldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		527594781DF369C900FCA655 /* bldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bldTests.swift; sourceTree = "<group>"; };
+		5275947A1DF369C900FCA655 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		529E5F681DF35DE600398AA7 /* APIInterface.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIInterface.swift; sourceTree = "<group>"; };
 		570454A91DDD171A00396BC1 /* BldModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BldModel.swift; sourceTree = "<group>"; };
 		570856B21DDBC6DD00668C74 /* bld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		570856B51DDBC6DD00668C74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +63,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		527594731DF369C900FCA655 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		570856AF1DDBC6DC00668C74 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -88,10 +111,20 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		527594771DF369C900FCA655 /* bldTests */ = {
+			isa = PBXGroup;
+			children = (
+				527594781DF369C900FCA655 /* bldTests.swift */,
+				5275947A1DF369C900FCA655 /* Info.plist */,
+			);
+			path = bldTests;
+			sourceTree = "<group>";
+		};
 		570454A81DDD16E300396BC1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				570454A91DDD171A00396BC1 /* BldModel.swift */,
+				529E5F681DF35DE600398AA7 /* APIInterface.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -100,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				570856B41DDBC6DD00668C74 /* bld */,
+				527594771DF369C900FCA655 /* bldTests */,
 				570856B31DDBC6DD00668C74 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				570856B21DDBC6DD00668C74 /* bld.app */,
+				527594761DF369C900FCA655 /* bldTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,6 +168,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		527594751DF369C900FCA655 /* bldTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5275947D1DF369C900FCA655 /* Build configuration list for PBXNativeTarget "bldTests" */;
+			buildPhases = (
+				527594721DF369C900FCA655 /* Sources */,
+				527594731DF369C900FCA655 /* Frameworks */,
+				527594741DF369C900FCA655 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5275947C1DF369C900FCA655 /* PBXTargetDependency */,
+			);
+			name = bldTests;
+			productName = bldTests;
+			productReference = 527594761DF369C900FCA655 /* bldTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		570856B11DDBC6DC00668C74 /* bld */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 570856C71DDBC6DD00668C74 /* Build configuration list for PBXNativeTarget "bld" */;
@@ -160,6 +213,11 @@
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Eric Fakhourian";
 				TargetAttributes = {
+					527594751DF369C900FCA655 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 570856B11DDBC6DC00668C74;
+					};
 					570856B11DDBC6DC00668C74 = {
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
@@ -180,11 +238,19 @@
 			projectRoot = "";
 			targets = (
 				570856B11DDBC6DC00668C74 /* bld */,
+				527594751DF369C900FCA655 /* bldTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		527594741DF369C900FCA655 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		570856B01DDBC6DC00668C74 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -198,6 +264,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		527594721DF369C900FCA655 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				527594791DF369C900FCA655 /* bldTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		570856AE1DDBC6DC00668C74 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -214,11 +288,20 @@
 				57A81C821DEFE1F800ADD036 /* MealRestrictionViewController.swift in Sources */,
 				1B275B0B1DEC086500E17C84 /* FoodTypePickerController.swift in Sources */,
 				570856B61DDBC6DD00668C74 /* AppDelegate.swift in Sources */,
+				529E5F691DF35DE600398AA7 /* APIInterface.swift in Sources */,
 				1B50578B1DE8D445000F43A7 /* AddItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5275947C1DF369C900FCA655 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 570856B11DDBC6DC00668C74 /* bld */;
+			targetProxy = 5275947B1DF369C900FCA655 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		570856B91DDBC6DD00668C74 /* Main.storyboard */ = {
@@ -240,6 +323,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5275947E1DF369C900FCA655 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = bldTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = bld.bldTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bld.app/bld";
+			};
+			name = Debug;
+		};
+		5275947F1DF369C900FCA655 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = bldTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = bld.bldTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/bld.app/bld";
+			};
+			name = Release;
+		};
 		570856C51DDBC6DD00668C74 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -360,6 +469,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5275947D1DF369C900FCA655 /* Build configuration list for PBXNativeTarget "bldTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5275947E1DF369C900FCA655 /* Debug */,
+				5275947F1DF369C900FCA655 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		570856AD1DDBC6DC00668C74 /* Build configuration list for PBXProject "bld" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
