@@ -61,6 +61,29 @@ class MealPlannerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        mondayBreakfastButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
+        mondayLunchButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
+        mondayDinnerButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
+        tuesdayBreakfastButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
+        tuesdayLunchButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
+        tuesdayDinnerButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
+        wednesdayBreakfastButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
+        wednesdayLunchButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
+        wednesdayDinnerButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
+        thursdayBreakfastButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
+        thursdayLunchButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
+        thursdayDinnerButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
+        fridayBreakfastButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
+        fridayLunchButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
+        fridayDinnerButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
+        saturdayBreakfastButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
+        saturdayLunchButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
+        saturdayDinnerButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
+        sundayBreakfastButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
+        sundayLunchButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
+        sundayDinnerButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
+        
+        mondayBreakfastButton.clipsToBounds = true
 
     }
 
