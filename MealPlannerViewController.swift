@@ -61,6 +61,9 @@ class MealPlannerViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        budgetTextField.layer.cornerRadius = 15
+        
         mondayBreakfastButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
         mondayLunchButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
         mondayDinnerButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
@@ -83,6 +86,7 @@ class MealPlannerViewController: UIViewController {
         sundayLunchButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
         sundayDinnerButton.layer.cornerRadius = mondayBreakfastButton.frame.size.width / 2
         
+        budgetTextField.clipsToBounds = true
         mondayBreakfastButton.clipsToBounds = true
 
     }
