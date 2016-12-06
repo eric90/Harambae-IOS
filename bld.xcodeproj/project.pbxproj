@@ -15,6 +15,7 @@
 		1B7ECD4C1DF22D0C0045E3E8 /* MealViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7ECD4B1DF22D0C0045E3E8 /* MealViewController.swift */; };
 		1B89C0C21DF3679300252120 /* MealPlannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B89C0C11DF3679300252120 /* MealPlannerViewController.swift */; };
 		1BCEDCF51DEA2F79005F3AFF /* PantryDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BCEDCF41DEA2F79005F3AFF /* PantryDetailController.swift */; };
+		521011871DF7652D007D6262 /* PlanningAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521011861DF7652D007D6262 /* PlanningAlgorithm.swift */; };
 		527594791DF369C900FCA655 /* bldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527594781DF369C900FCA655 /* bldTests.swift */; };
 		529E5F691DF35DE600398AA7 /* APIInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529E5F681DF35DE600398AA7 /* APIInterface.swift */; };
 		570454AA1DDD171A00396BC1 /* BldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570454A91DDD171A00396BC1 /* BldModel.swift */; };
@@ -46,6 +47,7 @@
 		1B7ECD4B1DF22D0C0045E3E8 /* MealViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealViewController.swift; sourceTree = "<group>"; };
 		1B89C0C11DF3679300252120 /* MealPlannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealPlannerViewController.swift; sourceTree = "<group>"; };
 		1BCEDCF41DEA2F79005F3AFF /* PantryDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PantryDetailController.swift; sourceTree = "<group>"; };
+		521011861DF7652D007D6262 /* PlanningAlgorithm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlanningAlgorithm.swift; sourceTree = "<group>"; };
 		527594761DF369C900FCA655 /* bldTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bldTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		527594781DF369C900FCA655 /* bldTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bldTests.swift; sourceTree = "<group>"; };
 		5275947A1DF369C900FCA655 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			children = (
 				570454A91DDD171A00396BC1 /* BldModel.swift */,
 				529E5F681DF35DE600398AA7 /* APIInterface.swift */,
+				521011861DF7652D007D6262 /* PlanningAlgorithm.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				1B7ECD4A1DF223630045E3E8 /* CalendarViewController.swift in Sources */,
 				1B275B0D1DEC0A2D00E17C84 /* MainTabBarViewController.swift in Sources */,
 				1B7ECD4C1DF22D0C0045E3E8 /* MealViewController.swift in Sources */,
+				521011871DF7652D007D6262 /* PlanningAlgorithm.swift in Sources */,
 				1BCEDCF51DEA2F79005F3AFF /* PantryDetailController.swift in Sources */,
 				570856B81DDBC6DD00668C74 /* ViewController.swift in Sources */,
 				1B89C0C21DF3679300252120 /* MealPlannerViewController.swift in Sources */,
@@ -476,6 +480,7 @@
 				5275947F1DF369C900FCA655 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		570856AD1DDBC6DC00668C74 /* Build configuration list for PBXProject "bld" */ = {
 			isa = XCConfigurationList;
