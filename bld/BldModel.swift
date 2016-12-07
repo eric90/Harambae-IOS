@@ -37,7 +37,7 @@ enum Restriction: String {
 ////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////
 
-class Ingredient {
+class Ingredient: Equatable {
     let name: String
     let type: FoodType
     var amount: Float
@@ -53,6 +53,14 @@ class Ingredient {
     func createJSON() -> String {
         return "Hey! This is a function to make!"
     }
+    
+    
+}
+
+//extension Ingredient: Equatable {}
+//
+func ==(lhs: Ingredient, rhs: Ingredient) -> Bool {
+    return lhs.name == rhs.name && lhs.amount == rhs.amount && lhs.type == rhs.type && lhs.unit == rhs.unit
 }
 
 ///////////////////////////////////////////
@@ -61,10 +69,30 @@ class Ingredient {
 class Recipe {
     let name: String
     let ingredients: [Ingredient]
+    var _cost : Double?
+    var _calories : Double?
     
     init(name: String, ingredients: [Ingredient]) {
         self.name = name
         self.ingredients = ingredients
+    }
+    
+    func usedIngreds() -> [Ingredient] {
+        return self.ingredients
+    }
+    
+    func cost() -> Double {
+        if (self._cost == nil) {
+            self._cost = ingredients.map(getCostOfIngred).reduce(0.0, +)
+        }
+        return self._cost!
+    }
+    
+    func calories() -> Double {
+        if (self._calories == nil) {
+            self._calories = ingredients.map(getCostOfIngred).reduce(0.0, +)
+        }
+        return self._cost!
     }
 }
 
@@ -175,9 +203,9 @@ class DayRequest {
 
 class MealRequest {
     var request: [DayRequest]
-    var budget: Float
+    var budget: Double
     
-    init(request: [DayRequest], budget: Float) {
+    init(request: [DayRequest], budget: Double) {
         self.request = request
         self.budget = budget
     }

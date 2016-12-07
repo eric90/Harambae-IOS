@@ -17,10 +17,19 @@ import Foundation
 let APIKey = "Ad2o5zmDRjmsh0gznsfNesuUVjLbp1yEKanjsnD6GtWC9k9xSX"
 let foodURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/ingredients/map"
 
+
+
+// TODO
+func getCostOfIngred(ingred: Ingredient) -> Double {
+    return 0.0
+}
+func getCaloriesOfIngred(ingred: Ingredient) -> Double {
+    return 0.0
+}
+
 // synchronous recipe request to the spoonacular service
 // arguments: ingredients, a list of Ingredients
 // returns: a JSON of the response
-
 // TODO: for ease of testing, the argument is hardcoded. replace with commented out code.
 func getRecipeJSONs (/*ingredients: [Ingredient]*/) -> Any {
     
