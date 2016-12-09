@@ -91,8 +91,11 @@ func getCandidateRecipes(mrday: MRDay, diet: Diet) -> [Recipe] {
 //        <#code#>
 //    }
     
+    if diet.dietaryRestriction == [Restriction.vegetarian] {
+        args["diet"] = "vegetarian"
+    }
     args["limitLicense"] = "false"
-    args["number"] = "5"
+    args["number"] = "10"
     
     switch mrday {
         case MRDay.breakfast: args["query"] = "breakfast"; args["type"] = "breakfast"
@@ -258,7 +261,7 @@ func generatePlan(mr: MealRequest, pan:Pantry, diet: Diet) -> [String: [MRDay: R
                 }
             }
             
-            suggestedRecipes[meal.date]![MRDay.breakfast] = choice
+            suggestedRecipes[meal.date]![MRDay.lunch] = choice
             thisMealBudget -= choice.cost()
             thisMealCalories -= choice.calories()
         }
@@ -295,7 +298,7 @@ func generatePlan(mr: MealRequest, pan:Pantry, diet: Diet) -> [String: [MRDay: R
                 }
             }
             
-            suggestedRecipes[meal.date]![MRDay.breakfast] = choice
+            suggestedRecipes[meal.date]![MRDay.dinner] = choice
             thisMealBudget -= choice.cost()
             thisMealCalories -= choice.calories()
         }

@@ -8,6 +8,33 @@
 
 import UIKit
 
+let newRegularCalendar = Calendar()
+let regularSat = Day(date: "Saturday")
+// BEN ADD THESE 3 LINES
+//regularSat.breakfast = Recipe(name: "Shredded Kale and Brussels Sprout Salad with Lemon Dressing", ingredients: [])
+//regularSat.lunch = Recipe(name: "Cabbage Salad with Peanuts", ingredients: [])
+//newRegularCalendar.days["Saturday"] = regularSat
+
+
+
+
+
+
+
+//let regularSun = Day(date: "Sunday")
+//regularSun.dinner = none
+//newRegularCalendar.days["Sunday"] = regularSun
+
+
+//let newVeggieCalendar = Calendar()
+//let veggieSat = Day(date: "Saturday")
+//veggieSat.breakfast = none
+//veggieSat.lunch = none
+//newVeggieCalendar.days["Saturday"] = veggieSat
+//let veggieSun = Day(date: "Sunday")
+//veggieSun.dinner = none
+//newVeggieCalendar.days["Sunday"] = veggieSun
+
 class CalendarViewController: UIViewController {
     
     var calendar = Calendar()

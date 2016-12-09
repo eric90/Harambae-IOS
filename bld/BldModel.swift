@@ -109,6 +109,22 @@ class Recipe: fromSpoonJSON {
     var _calories : Double?
     var _html: String // TODO: set this after meal planning is complete
     
+    func print() -> String {
+        var retString = self.name
+        if self.spoonID != nil {
+            retString += ", id:" + String(self.spoonID!)
+        }
+        if self._cost != nil {
+            retString += ", cost:" + String(self._cost!)
+        }
+        if self._calories != nil {
+            retString += ", calories:" + String(self._calories!)
+        }
+        
+//        retString += ", ingredients: "
+        return retString
+    }
+    
     init(name: String, ingredients: [Ingredient]) {
         self.name = name
         self.ingredients = ingredients
