@@ -11,10 +11,10 @@ import UIKit
 class CalendarViewController: UIViewController {
     
     
-    let lunch1 = Recipe(name: "Chana Masala", ingredients: [], url: "http://orangette.net/2006/03/a-public-display-of-chickpeas/")
-    let dinner1 = Recipe(name: "Moroccan Stew", ingredients: [], url: "http://www.foodnetwork.com/recipes/emeril-lagasse/harira-moroccan-chickpea-stew-with-chicken-and-lentils-recipe.html")
-    let dinner2 = Recipe(name: "Chard and Saffron Omlette", ingredients: [], url: "http://thehungrygoddess.com/2012/03/chard-and-saffron-omelette-by-ottolenghi/")
-    let breakfast1 = Recipe(name: "Oatmeal", ingredients: [], url: "http://www.foodnetwork.com/recipes/ina-garten/sunday-morning-oatmeal-recipe.html")
+    let lunch1 = Recipe(name: "Chana Masala", ingredients: [], url: "https://orangette.net/2006/03/a-public-display-of-chickpeas/")
+    let dinner1 = Recipe(name: "Moroccan Stew", ingredients: [], url: "https://www.theguardian.com/lifeandstyle/2013/jan/19/recipes-under-5-chickpea-stew")
+    let dinner2 = Recipe(name: "Chard and Saffron Omlette", ingredients: [], url: "https://www.theguardian.com/lifeandstyle/2007/aug/11/foodanddrink.recipes")
+    let breakfast1 = Recipe(name: "Oatmeal", ingredients: [], url: "https://www.theguardian.com/lifeandstyle/wordofmouth/2011/nov/10/how-to-cook-perfect-porridge")
     
     var day1 = Day(date: "Friday")
     var day2 = Day(date: "Sunday")
