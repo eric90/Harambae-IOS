@@ -12,6 +12,11 @@ import Foundation
 //////////////////// UNITS AND FOOD TYPES ////////////////////////
 //////////////////////////////////////////////////////////////////
 
+protocol fromSpoonJSON {
+    associatedtype ME
+    static func fromSpoonJSON(r: [String: Any]) -> ME
+}
+
 enum FoodType: String {
     case Dairy, Produce, Meat, Grains, Canned, Beverages, Snacks
     static var allTypes = ["Dairy","Produce","Meat","Grains","Canned","Beverages","Snacks"]
@@ -21,8 +26,8 @@ enum FoodType: String {
 ///////////////////////////////////////////
 
 enum Unit: String {
-    case oz, lb, cup, tbsp, tsp
-    static var allUnits = ["oz","lb","cup","tbsp","tsp"]
+    case oz, lb, cup, tbsp, tsp, none
+    static var allUnits = ["oz","lb","cup","tbsp","tsp", ""]
 }
 
 ///////////////////////////////////////////
@@ -37,13 +42,16 @@ enum Restriction: String {
 ////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////
 
-class Ingredient: Equatable {
+class Ingredient: Equatable, fromSpoonJSON {
+    typealias ME = Ingredient
+
     let name: String
-    let type: FoodType
-    var amount: Float
+    let type: FoodType?
+    var spoonID: Int?
+    var amount: Double
     let unit: Unit
     
-    init(name: String, type: FoodType, amount: Float, unit: Unit) {
+    init(name: String, type: FoodType?, amount: Double, unit: Unit) {
         self.name = name
         self.type = type
         self.amount = amount
@@ -53,9 +61,35 @@ class Ingredient: Equatable {
     func createJSON() -> String {
         return "Hey! This is a function to make!"
     }
+    func setSpoonID(i: Int) {
+        self.spoonID = i
+    }
     
-    
+    internal static func fromSpoonJSON(r: [String: Any]) -> Ingredient {
+        let nme = r["name"] as! String
+        let typ: FoodType? = nil
+        let amt = r["amount"] as! Double
+        let unit: Unit
+        switch r["unit"] as! String {
+            case "cup": unit = Unit.cup
+            case "cups": unit = Unit.cup
+            case "tablespoons": unit = Unit.tbsp
+            case "tablespoon": unit = Unit.tbsp
+            case "teaspoon": unit = Unit.tsp
+            case "teaspoons": unit = Unit.tsp
+            case "pound": unit = Unit.lb
+            case "pounds": unit = Unit.lb
+            case "": unit = Unit.none
+            case _: print("unrecognized case:" + (r["unit"] as! String)); unit = Unit.none
+        }
+        
+        let ret = Ingredient(name: nme, type: typ, amount: amt, unit: unit)
+        ret.setSpoonID(i: r["id"] as! Int)
+        return ret
+    }
 }
+
+
 
 //extension Ingredient: Equatable {}
 //
@@ -66,19 +100,27 @@ func ==(lhs: Ingredient, rhs: Ingredient) -> Bool {
 ///////////////////////////////////////////
 ///////////////////////////////////////////
 
-class Recipe {
+class Recipe: fromSpoonJSON {
+    typealias ME = Recipe
     let name: String
     let ingredients: [Ingredient]
+    var spoonID: Int?
     var _cost : Double?
     var _calories : Double?
+    var _html: String // TODO: set this after meal planning is complete
     
     init(name: String, ingredients: [Ingredient]) {
         self.name = name
         self.ingredients = ingredients
+        self._html = ""
     }
     
     func usedIngreds() -> [Ingredient] {
         return self.ingredients
+    }
+
+    func setSpoonID(i: Int) {
+        self.spoonID = i
     }
     
     func cost() -> Double {
@@ -92,7 +134,24 @@ class Recipe {
         if (self._calories == nil) {
             self._calories = ingredients.map(getCostOfIngred).reduce(0.0, +)
         }
-        return self._cost!
+        return self._calories!
+    }
+    
+    func getHTML() -> String {
+        return self._html
+    }
+    
+    internal static func fromSpoonJSON(r: [String : Any]) -> Recipe {
+        let ingredJSONs = r["extendedIngredients"] as! [[String: Any]]
+        let ingreds = ingredJSONs.map(Ingredient.fromSpoonJSON)
+        let ret = Recipe(name: r["title"] as! String, ingredients: ingreds)
+        
+        let nutrients = (r["nutrition"] as! [String: Any])["nutrients"] as! [[String: Any]]
+//        nutrients.first
+        let calories = nutrients.filter({return $0["title"] as! String == "Calories"}).first
+        ret._calories = calories!["amount"] as! Double
+        ret.setSpoonID(i: r["id"] as! Int)
+        return ret
     }
 }
 

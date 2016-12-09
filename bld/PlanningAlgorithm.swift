@@ -60,14 +60,85 @@ func costPerMealSlot(request: MealRequest) -> Double {
 }
 
 // TODO
+// send GET request: 
+// query <- mrday.type
+// diet <- diet
+// type <- breakfast or main course
+
+
+func getSpoonRecipe(id: Int) -> Recipe {
+    let reqSuffix = "recipes/" + String(id) + "/information"
+    var args = [String: String]()
+    args["includeNutrition"] = "true"
+    let spoonResp = synchronousReqJSON(urlSuffix: reqSuffix, getOrPost: true, args: args)
+    
+    return Recipe.fromSpoonJSON(r: spoonResp)
+    
+}
 func getCandidateRecipes(mrday: MRDay, diet: Diet) -> [Recipe] {
-    return []
+    let reqSuffix = "recipes/search"
+    var args = [String: String]()
+    
+    // TODO: diet and restricted
+    // spoonacular expects "diet -> string"
+    // intolerences -> comma sep string of
+    // dairy, egg, gluten, peanut, sesame, seafood, shellfish, soy, sulfite, tree nut, wheat
+    
+//    switch diet {
+//    case Diet.:
+//        <#code#>
+//    default:
+//        <#code#>
+//    }
+    
+    args["limitLicense"] = "false"
+    args["number"] = "5"
+    
+    switch mrday {
+        case MRDay.breakfast: args["query"] = "breakfast"; args["type"] = "breakfast"
+        case MRDay.lunch: args["query"] = "lunch"; args["type"] = "main+course"
+        case MRDay.dinner: args["query"] = "dinner"; args["type"] = "main+course"
+    }
+    
+    let spoonResp = synchronousReqJSON(urlSuffix: reqSuffix, getOrPost: true, args: args)["results"] as! [[String: Any]]
+    
+    return spoonResp.map{return getSpoonRecipe(id: $0["id"] as! Int)}
 }
 
-func errorMetric(recipe: Recipe, targetBudget: Double, targetCalories: Double, remainingIngreds: [Ingredient]) -> Double {
+func useIngredient(possibles: [String: Double], name: String, quantity: Double) -> ([String: Double], Double) {
+    
+    var retIngreds = possibles
+    let remainingQuant: Double
+    if let possQuant = retIngreds[name] {
+        if possQuant > quantity {
+            remainingQuant = 0
+            retIngreds[name] = possQuant - quantity
+        } else {
+            remainingQuant = quantity - possQuant
+            retIngreds.removeValue(forKey: name)
+        }
+    } else {
+        remainingQuant = quantity
+    }
+    
+    return (retIngreds, remainingQuant)
+}
+
+func errorMetric(recipe: Recipe, targetBudget: Double, targetCalories: Double, remainingIngreds: [String: Double]) -> Double {
     let calorieError = abs(recipe.calories() - targetCalories)/targetCalories
-    let budgetError = abs(recipe.cost() - targetBudget)/targetBudget // TODO
-    return calorieError + budgetError
+    let budgetError = abs(recipe.cost() - targetBudget)/targetBudget
+    
+    var unusedIngredsError = 0.0
+    var currentIngreds = remainingIngreds
+    
+    for usedIngred in recipe.usedIngreds(){
+        let (newIngreds, usedError) = useIngredient(possibles: currentIngreds, name: usedIngred.name, quantity: usedIngred.amount)
+        unusedIngredsError += usedError
+        currentIngreds = newIngreds
+    }
+    
+
+    return calorieError + budgetError + unusedIngredsError
 }
 
 // algorithm:
@@ -100,8 +171,10 @@ func errorMetric(recipe: Recipe, targetBudget: Double, targetCalories: Double, r
 
 // find the best candidate per slot, i.e., a map from days to {b/l/d: recipe} plans
 // days are strings....
+// TODO: Ben call this with meal request, pantry, and diet
+// returns: [date -> [mrday -> recipe]
 func generatePlan(mr: MealRequest, pan:Pantry, diet: Diet) -> [String: [MRDay: Recipe]] {
-    var remainingIngreds = flattenDict(dict: pan.ingredients)
+    var remainingIngreds = toDict(kvs: flattenDict(dict: pan.ingredients).map{return ($0.name, $0.amount)})
     // TODO: adjust budget as choices are taken
     let budgetPerSlot = costPerMealSlot(request: mr)
     let caloriesPerSlot = 300.0
@@ -137,7 +210,18 @@ func generatePlan(mr: MealRequest, pan:Pantry, diet: Diet) -> [String: [MRDay: R
             let choice = candidates[0]
             
             suggestedRecipes[meal.date]![MRDay.breakfast] = choice
-            remainingIngreds = diff(xs: remainingIngreds, ys: choice.usedIngreds())
+            
+            // remove the used ingredients
+            for (k,v) in choice.usedIngreds().map({return ($0.name, $0.amount)}) {
+                if let currentAmnt = remainingIngreds[k] {
+                    if (currentAmnt > v) {
+                        remainingIngreds[k] = currentAmnt - v
+                    } else {
+                        remainingIngreds.removeValue(forKey: k)
+                    }
+                }
+            }
+            
             thisMealBudget -= choice.cost()
             thisMealCalories -= choice.calories()
         }
@@ -163,8 +247,18 @@ func generatePlan(mr: MealRequest, pan:Pantry, diet: Diet) -> [String: [MRDay: R
             
             let choice = candidates[0]
             
+            // remove the used ingredients
+            for (k,v) in choice.usedIngreds().map({return ($0.name, $0.amount)}) {
+                if let currentAmnt = remainingIngreds[k] {
+                    if (currentAmnt > v) {
+                        remainingIngreds[k] = currentAmnt - v
+                    } else {
+                        remainingIngreds.removeValue(forKey: k)
+                    }
+                }
+            }
+            
             suggestedRecipes[meal.date]![MRDay.breakfast] = choice
-            remainingIngreds = diff(xs: remainingIngreds, ys: choice.usedIngreds())
             thisMealBudget -= choice.cost()
             thisMealCalories -= choice.calories()
         }
@@ -190,8 +284,18 @@ func generatePlan(mr: MealRequest, pan:Pantry, diet: Diet) -> [String: [MRDay: R
             
             let choice = candidates[0]
             
+            // remove the used ingredients
+            for (k,v) in choice.usedIngreds().map({return ($0.name, $0.amount)}) {
+                if let currentAmnt = remainingIngreds[k] {
+                    if (currentAmnt > v) {
+                        remainingIngreds[k] = currentAmnt - v
+                    } else {
+                        remainingIngreds.removeValue(forKey: k)
+                    }
+                }
+            }
+            
             suggestedRecipes[meal.date]![MRDay.breakfast] = choice
-            remainingIngreds = diff(xs: remainingIngreds, ys: choice.usedIngreds())
             thisMealBudget -= choice.cost()
             thisMealCalories -= choice.calories()
         }

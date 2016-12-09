@@ -39,3 +39,33 @@ func diff (xs: [Ingredient], ys: [Ingredient]) -> [Ingredient] {
     return xs.filter{return inY(t: $0)}
     
 }
+
+func partition<T>(vals: [T], chooser: (T) -> Bool) -> ([T], [T]) {
+    var trus = [T]()
+    var flss = [T]()
+    for v in vals {
+        if chooser(v) {
+            trus.append(v)
+        } else {
+            flss.append(v)
+        }
+    }
+    
+    return (trus, flss)
+}
+
+func union<K, V> (lhs: [K: V], rhs: [K: V]) -> [K: V] {
+    var ret = lhs
+    for (k, v) in rhs {
+        ret[k] = v
+    }
+    return ret
+}
+
+func toDict<K, V>(kvs: [(K, V)]) -> [K: V] {
+    var ret = [K: V]()
+    for (k, v) in kvs {
+        ret[k] = v
+    }
+    return ret
+}

@@ -87,7 +87,7 @@ class AddItemViewController: UITableViewController {
             let itemUnit = Unit(rawValue: unitLabel.text!)
             let itemName = itemNameTextField.text!
             let itemAmount = fracToFloat(num: amountTextField.text!)
-            ingredient = Ingredient(name: itemName, type: itemType!, amount: itemAmount, unit: itemUnit!)
+            ingredient = Ingredient(name: itemName, type: itemType!, amount: Double(itemAmount), unit: itemUnit!)
         }
         
     }

@@ -71,8 +71,8 @@ class PantryDetailController: UITableViewController {
     @IBAction func saveItemPantryDetailController(segue:UIStoryboardSegue) {
         if let addItemViewController = segue.source as? AddItemViewController {
             if let ingredient = addItemViewController.ingredient {
-                pantry.ingredients[ingredient.type]?.append(ingredient)
-                pantry.ingredients[ingredient.type]?.sort(by: orderIngredients)
+                pantry.ingredients[ingredient.type!]?.append(ingredient)
+                pantry.ingredients[ingredient.type!]?.sort(by: orderIngredients)
                 tableView.reloadData()
             }
         }

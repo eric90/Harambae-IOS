@@ -110,6 +110,8 @@ class CalendarViewController: UIViewController {
     @IBAction func processMealRequest(segue:UIStoryboardSegue) {
         if let mealPlannerViewController = segue.source as? MealPlannerViewController {
             let mealRequest = mealPlannerViewController.mealRequest
+            //insert plan method... mod calendar variable
+            //reload the calendar/page
             print("\(mealRequest)")
         }
     }

@@ -12,8 +12,11 @@ class MealViewController: UIViewController {
     
     var recipe: Recipe?
 
+    @IBOutlet weak var recipeDisplay: UIWebView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        recipeDisplay.loadHTMLString(recipe!.getHTML(), baseURL: nil)
         // Do any additional setup after loading the view.
     }
 

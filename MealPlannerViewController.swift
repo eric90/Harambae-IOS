@@ -134,7 +134,7 @@ class MealPlannerViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         mealRequest.request = Array(days.values)
-        mealRequest.budget = fracToFloat(num: budgetTextField.text!)
+        mealRequest.budget = Double(fracToFloat(num: budgetTextField.text!))
     }
     
     // Converts string input to float. If entry isn't valid returns 0.0
