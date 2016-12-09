@@ -101,31 +101,28 @@ class MealPlannerViewController: UIViewController {
     
     @IBAction func selectBreakfast(_ sender: UIButton) {
         days[sender.tag]?.breakfast = !(days[sender.tag]?.breakfast)!
-        print("\(sender.backgroundColor)")
-        if sender.backgroundColor == UIColor(hexString: "#FF0000") {
-            sender.backgroundColor = UIColor.cyan
+        if sender.backgroundColor == UIColor(hexString: "#D2D9FF") {
+            sender.backgroundColor = UIColor(hexString: "#FFE2EE")
         } else {
-            sender.backgroundColor = UIColor(hexString: "#FF0000")
+            sender.backgroundColor = UIColor(hexString: "#D2D9FF")
         }
     }
 
     @IBAction func selectLunch(_ sender: UIButton) {
         days[sender.tag]?.lunch = !(days[sender.tag]?.lunch)!
-        print("\(sender.backgroundColor)")
-        if sender.backgroundColor == UIColor(hexString: "#FF0000") {
-            sender.backgroundColor = UIColor.cyan
+        if sender.backgroundColor == UIColor(hexString: "#D2D9FF") {
+            sender.backgroundColor = UIColor(hexString: "#FFE2EE")
         } else {
-            sender.backgroundColor = UIColor(hexString: "#FF0000")
+            sender.backgroundColor = UIColor(hexString: "#D2D9FF")
         }
     }
     
     @IBAction func selectDinner(_ sender: UIButton) {
         days[sender.tag]?.dinner = !(days[sender.tag]?.dinner)!
-        print("\(sender.backgroundColor)")
-        if sender.backgroundColor == UIColor(hexString: "#FF0000") {
-            sender.backgroundColor = UIColor.cyan
+        if sender.backgroundColor == UIColor(hexString: "#D2D9FF") {
+            sender.backgroundColor = UIColor(hexString: "#FFE2EE")
         } else {
-            sender.backgroundColor = UIColor(hexString: "#FF0000")
+            sender.backgroundColor = UIColor(hexString: "#D2D9FF")
         }
     }
     

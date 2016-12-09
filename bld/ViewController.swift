@@ -14,8 +14,12 @@ class ViewController: UIViewController {
         
     }
     
+    @IBOutlet weak var signIn: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        signIn.layer.cornerRadius = 15
+        signIn.clipsToBounds = true
         // Do any additional setup after loading the view, typically from a nib.
     }
 

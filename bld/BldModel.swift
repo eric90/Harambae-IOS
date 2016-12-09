@@ -61,10 +61,12 @@ class Ingredient {
 class Recipe {
     let name: String
     let ingredients: [Ingredient]
+    let url: String
     
-    init(name: String, ingredients: [Ingredient]) {
+    init(name: String, ingredients: [Ingredient], url: String) {
         self.name = name
         self.ingredients = ingredients
+        self.url = url
     }
 }
 
@@ -114,7 +116,7 @@ class Day {
         self.dinner = none
     }
 
-    let none = Recipe(name: "None", ingredients: [])
+    let none = Recipe(name: "None", ingredients: [], url: "www.google.com")
 }
 
 class Calendar {
@@ -150,8 +152,14 @@ class Calendar {
     }
     
     func decrementDisplayDate() {
-        let subtractDateIndex = ((weekDays.index(of: displayDate))! - 1) % 7
-        displayDate = weekDays[subtractDateIndex]
+        let currentIndex = (weekDays.index(of: displayDate))!
+        if currentIndex != 0 {
+            let subtractDateIndex = (currentIndex - 1)
+            displayDate = weekDays[subtractDateIndex]
+        } else {
+            let subtractDateIndex = 6
+            displayDate = weekDays[subtractDateIndex]
+        }
     }
     
 }

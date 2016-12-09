@@ -32,8 +32,10 @@ class MealRestrictionViewController: UIViewController, UITableViewDataSource, UI
     @IBOutlet weak var restrictedItems: UITextField!
     
     @IBAction func SubmitRestrictions(_ sender: Any) {
-        let newRestriction = Restriction(rawValue: selectedRestriction!)
-        diet.dietaryRestriction.append(newRestriction!)
+        if let selected = selectedRestriction {
+            let newRestriction = Restriction(rawValue: selected)
+            diet.dietaryRestriction.append(newRestriction!)
+        }
         performSegue(withIdentifier: "SaveInitialDiet", sender: self)
     }
     
@@ -56,9 +58,9 @@ class MealRestrictionViewController: UIViewController, UITableViewDataSource, UI
         cell.textLabel!.text = Restriction.allRestrictions[indexPath.row]
         
         if indexPath.row == selectedRestrictionIndex {
-            cell.accessoryType = .checkmark
+            cell.isHighlighted = true
         } else {
-            cell.accessoryType = .none
+            cell.isHighlighted = false
         }
         
         return cell
@@ -70,14 +72,17 @@ class MealRestrictionViewController: UIViewController, UITableViewDataSource, UI
         //Other row is selected - need to deselect it
         if let index = selectedRestrictionIndex {
             let cell = tableView.cellForRow(at: NSIndexPath(item: index, section: 0) as IndexPath) as UITableViewCell!
-            cell?.accessoryType = .none
+            cell?.isHighlighted = false
+            //cell?.accessoryType = .none
         }
         
         selectedRestriction = Restriction.allRestrictions[indexPath.row]
         
         //update the checkmark for the current row
         let cell = tableView.cellForRow(at: indexPath)
-        cell?.accessoryType = .checkmark
+        cell?.isHighlighted = true
+        
+        //cell?.accessoryType = .checkmark
     }
     
     //////////////////////////////////////
